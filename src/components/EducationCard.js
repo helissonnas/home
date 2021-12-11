@@ -20,7 +20,7 @@ function EducationCard(props) {
       </Card>
 
       {showModal && 
-        <Modal title={edu.degree} language={props.language} icon={'formacao.png'} description={edu.place} onClose={() => setShowModal(false)}>
+        <Modal title={edu.degree} language={props.language} icon={'formacao.png'} onClose={() => setShowModal(false)}>
           <div className="relative p-6 ml-11 flex-auto text-gray-600 text-right">
             {`${edu.entity} | ${props.period[0]} - ${props.period[1]}`}
           </div>
