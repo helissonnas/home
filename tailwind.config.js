@@ -1,3 +1,4 @@
+const { yellow } = require('tailwindcss/colors')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -7,7 +8,10 @@ module.exports = {
     colors: {
       gray: colors.warmGray,
       black: '#0E0E0E',
-      green: colors.emerald
+      blacktrans: '#000000b8',
+      green: colors.emerald,
+      yellow: colors.yellow,
+      blue: colors.sky
     },
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],

@@ -13,7 +13,6 @@ function Codewriter() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log(fullText.substring(0, index), index)
       if (index < fullText.length) {
         setIndex(prev => (prev+1));
       } else if (!semicolon) {
@@ -33,7 +32,7 @@ function Codewriter() {
   }, [blink]);
 
   return (
-    <div className="font-code text-gray-300">
+    <div className="font-code text-gray-300 min-w-max">
       <span className="text-green-500">{fullText.substring(0, index)}</span><span className="text-gray-300">{semicolon ? ';' : ''}</span><span className="text-gray-200">{blink ? '|' : ''}</span>
     </div>
   )
