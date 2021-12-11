@@ -13,11 +13,11 @@ function Header(props) {
           <option value="en">🇬🇧</option>
         </select>
       </div>
-      <div className="flex items-center flex-no-shrink text-gray-200 mr-20">  
+      {/* <div className="flex items-center flex-no-shrink text-gray-200 mr-20">  
         <Button onClick={(e) => console.log(e)}>
           Blog
         </Button>
-      </div>
+      </div> */}
      </nav>
   );
 }

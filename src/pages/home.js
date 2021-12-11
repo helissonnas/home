@@ -18,10 +18,10 @@ function Home(props) {
         <Section title={'Formação'} card={EducationCard} language={props.language} items={store.education} />
         <Section title={'Experiência Profissional'} card={ExperienceCard} language={props.language} items={store.experience} />
         <Section title={'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
-        <Board title={'Portfólio'} items={[
+        {/* <Board title={'Portfólio'} items={[
           {name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900', logo: '../assets/finfast.png'}, 
           {name: 'Sabia', color: 'blue-300', textColor: 'blue-900', logo: '../assets/sabia.png'}, 
-          {name: 'Leite', color: 'gray-200', textColor: 'gray-600', logo: '../assets/leite.png'}]} />
+          {name: 'Leite', color: 'gray-200', textColor: 'gray-600', logo: '../assets/leite.png'}]} /> */}
         <Contact />
       </section>
       <Footer />
