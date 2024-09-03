@@ -1,14 +1,19 @@
-import { ReactComponent as Swap } from '../assets/icons/swap.svg';
-import Button from './Button';
 import { useState } from 'react';
 
 function Header(props) {
   const [show, setShow] = useState(false);
 
   return (
-     <nav className="fixed min-w-full flex items-center justify-between flex-nowrap">
+    <nav className="fixed min-w-full flex items-center justify-between flex-nowrap">
       <div className="flex items-center flex-no-shrink mr-6">
-        <select className="bg-black" selected={props.language} onChange={(e) => { props.changeLanguage(e.target.value); setShow(false)}}>
+        <select
+          className="bg-black"
+          selected={props.language}
+          onChange={(e) => {
+            props.changeLanguage(e.target.value);
+            setShow(false);
+          }}
+        >
           <option value="pt">🇵🇹</option>
           <option value="en">🇬🇧</option>
         </select>
@@ -18,7 +23,7 @@ function Header(props) {
           Blog
         </Button>
       </div> */}
-     </nav>
+    </nav>
   );
 }
 

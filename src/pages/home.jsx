@@ -1,5 +1,4 @@
 import Banner from '../components/Banner';
-import Board from '../components/Board';
 import Contact from '../components/Contact';
 import EducationCard from '../components/EducationCard';
 import ExperienceCard from '../components/ExperienceCard';
@@ -16,7 +15,12 @@ function Home(props) {
       <Banner />
       <section className="flex flex-col items-end justify-end">
         <Section title={'Formação'} card={EducationCard} language={props.language} items={store.education} />
-        <Section title={'Experiência Profissional'} card={ExperienceCard} language={props.language} items={store.experience} />
+        <Section
+          title={'Experiência Profissional'}
+          card={ExperienceCard}
+          language={props.language}
+          items={store.experience}
+        />
         <Section title={'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
         {/* <Board title={'Portfólio'} items={[
           {name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900', logo: '../assets/finfast.png'}, 
