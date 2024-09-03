@@ -1,0 +1,25 @@
+/* ./src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: black;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #1b1b1b;
+  border-radius: 1rem;
+}
