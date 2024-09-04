@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Card from './Card';
 import Modal from './Modal';
@@ -33,5 +34,16 @@ function ExperienceCard(props) {
     </>
   );
 }
+
+ExperienceCard.propTypes = {
+  language: PropTypes.string,
+  logo: PropTypes.string,
+  period: PropTypes.arrayOf(PropTypes.number).isRequired,
+  [PropTypes.string]: PropTypes.shape({
+    company: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
+};
 
 export default ExperienceCard;

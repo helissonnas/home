@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from './Button';
 import ImageProvider from './ImageProvider';
 
@@ -12,7 +13,7 @@ function Modal(props) {
             <div className="col-start-1">
               {props.icon && <img src={ImageProvider(props.icon)} className="ml-8 w-32" alt="icon" />}
             </div>
-            <h3 className="text-3xl font-semibold pt-8  max-w-3xl">{props.title}</h3>
+            <h3 className="text-3xl font-semibold pt-8 max-w-3xl">{props.title}</h3>
           </div>
 
           {props.children}
@@ -26,5 +27,13 @@ function Modal(props) {
     </div>
   );
 }
+
+Modal.propTypes = {
+  icon: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  language: PropTypes.string.isRequired,
+};
 
 export default Modal;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 function Board(props) {
@@ -8,7 +9,16 @@ function Board(props) {
         {props.items.map(it => (<Card key={it.name} project={it}/>))}
       </div>
     </section>
-  )
+  );
 }
+
+Board.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Board;

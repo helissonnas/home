@@ -1,17 +1,14 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function Header(props) {
-  const [show, setShow] = useState(false);
-
   return (
     <nav className="fixed min-w-full flex items-center justify-between flex-nowrap">
       <div className="flex items-center flex-no-shrink mr-6">
         <select
           className="bg-black"
-          selected={props.language}
+          value={props.language} // Fixed to use value instead of selected
           onChange={(e) => {
             props.changeLanguage(e.target.value);
-            setShow(false);
           }}
         >
           <option value="pt">🇵🇹</option>
@@ -26,5 +23,10 @@ function Header(props) {
     </nav>
   );
 }
+
+Header.propTypes = {
+  language: PropTypes.string.isRequired,
+  changeLanguage: PropTypes.func.isRequired,
+};
 
 export default Header;

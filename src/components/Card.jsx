@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ImageProvider from './ImageProvider';
 
 function Card(props) {
@@ -35,5 +36,19 @@ function Card(props) {
     </div>
   );
 }
+
+Card.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    textColor: PropTypes.string.isRequired,
+  }),
+  logo: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  width: PropTypes.string,
+  clearCard: PropTypes.bool,
+};
 
 export default Card;

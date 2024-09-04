@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Banner from '../components/Banner';
 import Contact from '../components/Contact';
 import EducationCard from '../components/EducationCard';
@@ -22,15 +23,16 @@ function Home(props) {
           items={store.experience}
         />
         <Section title={'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
-        {/* <Board title={'Portfólio'} items={[
-          {name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900', logo: '../assets/finfast.png'}, 
-          {name: 'Sabia', color: 'blue-300', textColor: 'blue-900', logo: '../assets/sabia.png'}, 
-          {name: 'Leite', color: 'gray-200', textColor: 'gray-600', logo: '../assets/leite.png'}]} /> */}
         <Contact />
       </section>
       <Footer />
     </div>
   );
 }
+
+Home.propTypes = {
+  language: PropTypes.string.isRequired,
+  changeLanguage: PropTypes.func.isRequired,
+};
 
 export default Home;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Input(props) {
   return (
     <div className="w-full mb-4">
@@ -8,5 +10,12 @@ function Input(props) {
     </div>
   )
 }
+
+Input.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func
+};
 
 export default Input;

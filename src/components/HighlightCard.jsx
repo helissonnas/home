@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Card from './Card';
 import Modal from './Modal';
@@ -10,7 +11,7 @@ function HighlightCard(props) {
 
   const detailsButton = () =>
     props.link && (
-      <a href={props.link} target="_blank">
+      <a href={props.link} target="_blank" rel="noopener noreferrer">
         <Button>{props.language === 'pt' ? 'Visualizar ' + high.label : 'Go to ' + high.label}</Button>
       </a>
     );
@@ -49,5 +50,18 @@ function HighlightCard(props) {
     </>
   );
 }
+
+HighlightCard.propTypes = {
+  language: PropTypes.string,
+  icon: PropTypes.string,
+  link: PropTypes.string,
+  video: PropTypes.bool,
+  [PropTypes.string]: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    vehicle: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+};
 
 export default HighlightCard;
