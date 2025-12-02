@@ -7,12 +7,12 @@ function Card(props) {
     </div>
   );
   const childrenContent = () => (
-    <div className="grid grid-cols-5">
-      <div className="col-start-1">
-        {props.logo && <img src={ImageProvider(props.logo)} className="ml-8 w-16" alt="logo" />}
+    <div className="flex flex-col sm:grid sm:grid-cols-5 gap-2">
+      <div className="sm:col-start-1 flex justify-center sm:justify-start">
+        {props.logo && <img src={ImageProvider(props.logo)} className="w-12 sm:w-16 sm:ml-8" alt="logo" />}
       </div>
-      <div className="col-span-4">
-        {props.title && <h1 className="text-xl text-gray-300 font-medium">{props.title}</h1>}
+      <div className="sm:col-span-4 text-center sm:text-left">
+        {props.title && <h1 className="text-lg sm:text-xl text-gray-300 font-medium">{props.title}</h1>}
         <div className="mt-2">{props.children}</div>
       </div>
     </div>
@@ -30,7 +30,7 @@ function Card(props) {
       {props.clearCard ? (
         props.children
       ) : (
-        <div className="p-5">{props.project ? projectCard() : childrenContent()}</div>
+        <div className="p-4 sm:p-5">{props.project ? projectCard() : childrenContent()}</div>
       )}
     </div>
   );

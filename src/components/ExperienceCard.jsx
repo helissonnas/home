@@ -21,12 +21,12 @@ function ExperienceCard(props) {
 
       {showModal && (
         <Modal title={comp.role} language={props.language} icon={'experiencia'} onClose={() => setShowModal(false)}>
-          <div className="relative p-6 ml-11 flex-auto text-gray-600 text-right">
+          <div className="relative px-4 sm:px-6 py-2 flex-auto text-gray-600 text-center sm:text-right text-sm sm:text-base">
             {comp.company} | {props.period[0]}
             {props.period[1] && `-${props.period[1]}`}
           </div>
-          <div className="relative p-6 ml-11 flex-auto">
-            <p className="text-gray-300 text-lg leading-relaxed text-justify">{comp.description}</p>
+          <div className="relative px-4 sm:px-6 py-4 flex-auto">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">{comp.description}</p>
           </div>
         </Modal>
       )}

@@ -27,14 +27,13 @@ function HighlightCard(props) {
 
       {showModal && (
         <Modal title={high.title} language={props.language} icon={'destaque'} onClose={() => setShowModal(false)}>
-          <div className="relative p-6 ml-11 flex-auto text-gray-600 text-right">
+          <div className="relative px-4 sm:px-6 py-2 flex-auto text-gray-600 text-center sm:text-right text-sm sm:text-base">
             {high.vehicle} | {high.date}
           </div>
-          <div className="relative ml-11 flex-auto">
+          <div className="relative px-4 sm:px-6 py-4 flex-auto">
             {props.video ? (
               <iframe
-                width="90%"
-                height="315"
+                className="w-full aspect-video"
                 src={props.link}
                 title={high.title}
                 frameBorder="0"
