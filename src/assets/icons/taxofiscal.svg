@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tree structure logo -->
+  <circle cx="100" cy="30" r="12" fill="#4B5563"/>
+  <line x1="100" y1="42" x2="100" y2="70" stroke="#4B5563" stroke-width="4"/>
+  
+  <circle cx="100" cy="70" r="12" fill="#4B5563"/>
+  <line x1="100" y1="82" x2="60" y2="110" stroke="#4B5563" stroke-width="4"/>
+  <line x1="100" y1="82" x2="140" y2="110" stroke="#4B5563" stroke-width="4"/>
+  
+  <circle cx="60" cy="110" r="12" fill="#4B5563"/>
+  <circle cx="140" cy="110" r="12" fill="#4B5563"/>
+  
+  <line x1="60" y1="122" x2="40" y2="145" stroke="#4B5563" stroke-width="4"/>
+  <line x1="60" y1="122" x2="80" y2="145" stroke="#4B5563" stroke-width="4"/>
+  <line x1="140" y1="122" x2="120" y2="145" stroke="#4B5563" stroke-width="4"/>
+  <line x1="140" y1="122" x2="160" y2="145" stroke="#4B5563" stroke-width="4"/>
+  
+  <circle cx="40" cy="145" r="10" fill="#4B5563"/>
+  <circle cx="80" cy="145" r="10" fill="#4B5563"/>
+  <circle cx="120" cy="145" r="10" fill="#4B5563"/>
+  <circle cx="160" cy="145" r="10" fill="#4B5563"/>
+  
+  <!-- Base -->
+  <rect x="80" y="165" width="40" height="5" fill="#4B5563"/>
+</svg>

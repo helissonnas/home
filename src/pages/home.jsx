@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Banner from '../components/Banner';
+import Board from '../components/Board';
 import Contact from '../components/Contact';
 import EducationCard from '../components/EducationCard';
 import ExperienceCard from '../components/ExperienceCard';
@@ -24,10 +25,13 @@ function Home(props) {
         <Section title={props.language === 'en' ? 'Education' : 'Formação'} card={EducationCard} language={props.language} items={store.education} />
 
         <Section title={props.language === 'en' ? 'Highlights' : 'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
-        {/* <Board title={props.language === 'en' ? 'Portfolio' : 'Portfólio'} items={[
-          {name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900', logo: '../assets/finfast.png'}, 
-          {name: 'Sabia', color: 'blue-300', textColor: 'blue-900', logo: '../assets/sabia.png'}, 
-          {name: 'Leite', color: 'gray-200', textColor: 'gray-600', logo: '../assets/leite.png'}]} /> */}
+        
+        <Board 
+          title={props.language === 'en' ? 'Portfolio' : 'Portfólio'} 
+          items={store.portfolio}
+          language={props.language}
+        />
+        
         <Contact language={props.language}/>
       </section>
       <Footer />
