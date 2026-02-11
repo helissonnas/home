@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Banner from '../components/Banner';
 import Contact from '../components/Contact';
 import EducationCard from '../components/EducationCard';
@@ -14,23 +15,29 @@ function Home(props) {
       <Header language={props.language} changeLanguage={props.changeLanguage} />
       <Banner />
       <section className="flex flex-col items-end justify-end">
-        <Section title={'Formação'} card={EducationCard} language={props.language} items={store.education} />
         <Section
-          title={'Experiência Profissional'}
+          title={props.language === 'en' ? 'Professional Experience' : 'Experiência Profissional'}
           card={ExperienceCard}
           language={props.language}
           items={store.experience}
         />
-        <Section title={'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
-        {/* <Board title={'Portfólio'} items={[
+        <Section title={props.language === 'en' ? 'Education' : 'Formação'} card={EducationCard} language={props.language} items={store.education} />
+
+        <Section title={props.language === 'en' ? 'Highlights' : 'Destaques'} card={HighlightCard} items={store.highlights} language={props.language} />
+        {/* <Board title={props.language === 'en' ? 'Portfolio' : 'Portfólio'} items={[
           {name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900', logo: '../assets/finfast.png'}, 
           {name: 'Sabia', color: 'blue-300', textColor: 'blue-900', logo: '../assets/sabia.png'}, 
           {name: 'Leite', color: 'gray-200', textColor: 'gray-600', logo: '../assets/leite.png'}]} /> */}
-        <Contact />
+        <Contact language={props.language}/>
       </section>
       <Footer />
     </div>
   );
 }
+
+Home.propTypes = {
+  language: PropTypes.string.isRequired,
+  changeLanguage: PropTypes.func.isRequired,
+};
 
 export default Home;
