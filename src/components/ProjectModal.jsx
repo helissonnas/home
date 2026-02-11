@@ -18,7 +18,9 @@ function ProjectModal(props) {
       <div className="relative p-6 flex-auto text-gray-300">
         {/* Overview */}
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-3 text-gray-100">Overview</h2>
+          <h2 className="text-2xl font-semibold mb-3 text-gray-100">
+            {language === 'pt' ? 'Visão Geral' : 'Overview'}
+          </h2>
           <p className="text-base leading-relaxed">{content.overview}</p>
         </div>
 

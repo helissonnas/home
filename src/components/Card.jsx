@@ -1,8 +1,21 @@
 import ImageProvider from './ImageProvider';
 
+// Color map for Tailwind classes (to ensure JIT compilation works)
+const colorMap = {
+  'yellow-400': 'bg-yellow-400 text-yellow-900',
+  'blue-300': 'bg-blue-300 text-blue-900',
+  'gray-200': 'bg-gray-200 text-gray-600',
+  'gray-800': 'bg-gray-800 text-gray-200',
+  'gray-900': 'bg-gray-900 text-gray-400',
+};
+
 function Card(props) {
+  const projectColors = props.project
+    ? colorMap[props.project.color] || 'bg-gray-900 text-gray-400'
+    : 'bg-gray-900 text-gray-400';
+
   const projectCard = () => (
-    <div className={`text-${props.project.textColor} text-2xl font-semibold flex justify-around items-center h-16 gap-4`}>
+    <div className="text-2xl font-semibold flex justify-around items-center h-16 gap-4">
       {props.project.logo && <img src={ImageProvider(props.project.logo)} className="w-12 h-12" alt={props.project.name} />}
       {props.project.name}
     </div>
@@ -22,9 +35,7 @@ function Card(props) {
   return (
     <div
       onClick={props.onClick}
-      className={`w-${props.width ?? 'full'} bg-${
-        props.project ? props.project.color : 'gray-900'
-      } mt-3 text-gray-400 rounded-lg overflow-hidden shadow-lg hover:shadow-xl ${
+      className={`w-${props.width ?? 'full'} ${projectColors} mt-3 rounded-lg overflow-hidden shadow-lg hover:shadow-xl ${
         !props.clearCard && 'hover:scale-105 duration-400 transform transition cursor-pointer'
       }`}
     >
