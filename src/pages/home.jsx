@@ -10,7 +10,7 @@ import store from '../data/store';
 
 function Home(props) {
   return (
-    <div className="container m-8 h-full">
+    <div className="container mx-4 md:mx-8 my-8 h-full">
       <Header language={props.language} changeLanguage={props.changeLanguage} />
       <Banner />
       <section className="flex flex-col items-end justify-end">

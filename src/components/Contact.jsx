@@ -10,12 +10,12 @@ function Contact() {
 
   const [state, handleSubmit] = useForm("mqkwwjnk");
   if (state.succeeded) {
-      return <section className="text-gray-200  w-4/5 mt-8">Obrigado por entrar em contato!</section>;
+      return <section className="text-gray-200 w-full md:w-4/5 mt-8">Obrigado por entrar em contato!</section>;
   }
 
   return (
-    <section className="text-gray-200  w-4/5 mt-8">
-      <h1 className="text-4xl font-bold">Contato</h1>
+    <section className="text-gray-200 w-full md:w-4/5 mt-8">
+      <h1 className="text-2xl md:text-4xl font-bold">Contato</h1>
       <Card clearCard>
           <form className="p-8" onSubmit={handleSubmit}>
             <Input value={email} onChange={setEmail} name="email" label="E-mail" type="email"/>

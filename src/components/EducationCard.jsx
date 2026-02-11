@@ -22,11 +22,11 @@ function EducationCard(props) {
 
       {showModal && (
         <Modal title={edu.degree} language={props.language} icon={'formacao'} onClose={() => setShowModal(false)}>
-          <div className="relative p-6 ml-11 flex-auto text-gray-600 text-right">
+          <div className="relative px-4 sm:px-6 py-2 flex-auto text-gray-600 text-center sm:text-right text-sm sm:text-base">
             {`${edu.entity} | ${props.period[0]} - ${props.period[1]}`}
           </div>
-          <div className="relative max-w-[90%] p-6 ml-11 flex-auto">
-            <p className="text-gray-300 break-words text-lg leading-relaxed text-justify">{edu.description}</p>
+          <div className="relative w-full px-4 sm:px-6 py-4 flex-auto">
+            <p className="text-gray-300 break-words text-base sm:text-lg leading-relaxed text-justify">{edu.description}</p>
           </div>
         </Modal>
       )}
