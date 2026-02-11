@@ -184,8 +184,99 @@ export default {
     },
   ],
   portfolio: [
-    { name: 'FinFast', color: 'yellow-400', textColor: 'yellow-900' },
-    { name: 'Sabia', color: 'blue-300', textColor: 'blue-900' },
-    { name: 'Leite', color: 'gray-200', textColor: 'gray-600' },
+    {
+      name: 'Taxofiscal',
+      logo: 'taxofiscal',
+      color: 'gray-800',
+      textColor: 'gray-200',
+      pt: {
+        title: 'Taxofiscal',
+        overview: 'Taxofiscal é um projeto de engenharia pessoal focado em resolver problemas reais de dados fiscais no ecossistema brasileiro de NF-e (nota fiscal eletrônica). O projeto aborda inconsistências estruturais em dados de notas fiscais que impactam diretamente a conformidade fiscal, precisão de estoque e confiabilidade financeira.',
+        sections: [
+          {
+            title: 'Contexto e Problema de Negócio',
+            subsections: [
+              {
+                subtitle: 'O Problema',
+                content: 'As NF-es brasileiras são inerentemente complexas e altamente inconsistentes. Mesmo quando legalmente válidas, as notas fiscais frequentemente contêm:\n• Classificações NCM ambíguas ou incorretas\n• Unidades de medida inconsistentes (ex: UN, CX, KG, FD)\n• Descrições de produtos não padronizadas\n• Quantidades divergentes que quebram o balanço de estoque\n\nÀ medida que o volume de notas fiscais cresce, essas inconsistências se acumulam, levando a dados de estoque não confiáveis, sobrecarga de reconciliação manual e aumento do risco fiscal.'
+              },
+              {
+                subtitle: 'Por Que Isso Importa',
+                content: 'Para empresas operando em escala, esses problemas resultam em:\n• Exposição a auditorias fiscais e penalidades\n• Ineficiência operacional devido a correções manuais\n• Perda de confiança em relatórios de estoque e financeiros\n• Incapacidade de automatizar processos downstream de forma confiável\n\nEste problema é especialmente relevante para fintechs, ERPs, plataformas de contabilidade, marketplaces e operações com forte componente logístico.'
+              }
+            ]
+          },
+          {
+            title: 'Proposta de Valor',
+            content: 'Taxofiscal fornece uma abordagem estruturada para confiabilidade de dados fiscais através de:\n• Processamento determinístico onde possível\n• Inferência assistida por IA onde existe ambiguidade\n• Rastreabilidade completa de cada decisão\n• Modelos de dados prontos para auditoria\n\nO sistema é intencionalmente conservador: a automação só é aplicada quando os limiares de confiança são atingidos, caso contrário as decisões são sinalizadas para revisão.'
+          },
+          {
+            title: 'Arquitetura Técnica e Engenharia',
+            subsections: [
+              {
+                subtitle: 'Princípios de Design',
+                content: 'O sistema é construído em torno de alguns princípios não negociáveis:\n• Estruturas de dados imutáveis (append-only)\n• Pipelines idempotentes para reprocessamento seguro\n• Separação clara entre lógica determinística e inferência assistida por IA\n• Modelagem explícita de incerteza e confiança'
+              },
+              {
+                subtitle: 'Arquitetura de Alto Nível',
+                content: 'Taxofiscal é implementado como um pipeline de processamento baseado em etapas, onde cada estágio produz saídas auditáveis que podem ser seguramente reproduzidas ou recomputadas.\n\nA arquitetura suporta:\n• Processamento incremental de novas notas fiscais\n• Reconciliação através de dados históricos\n• Decisões versionadas e lógica de classificação evolutiva'
+              },
+              {
+                subtitle: 'Componentes Principais',
+                content: '• Camada de Ingestão de NF-e — Analisa e valida XMLs de notas fiscais brutas\n• Motor de Canonização — Normaliza identidades de produtos e unidades de medida\n• Classificação NCM Assistida por IA — Sugere classificações fiscais conservadoras com scoring de confiança\n• Livro Razão de Estoque Append-Only — Mantém um histórico rastreável de movimentações de estoque\n• Motor de Reconciliação — Detecta e explica inconsistências de estoque\n• Fluxo de Revisão Manual — Trata casos de baixa confiança ou ambíguos'
+              },
+              {
+                subtitle: 'Stack Tecnológico',
+                content: '• Backend: Node.js, TypeScript\n• Banco de Dados: PostgreSQL\n• ORM: Prisma\n• Camada de IA: Classificação e normalização assistida por LLM\n• Infraestrutura: VPS, Nginx\n• Modelo de Execução: MVP local-first, design orientado a produção'
+              }
+            ]
+          }
+        ]
+      },
+      en: {
+        title: 'Taxofiscal',
+        overview: 'Taxofiscal is a personal engineering project focused on solving real-world fiscal data problems in the Brazilian NF-e (electronic invoice) ecosystem. The project addresses structural inconsistencies in invoice data that directly impact tax compliance, inventory accuracy, and financial reliability.',
+        sections: [
+          {
+            title: 'Business Context & Problem',
+            subsections: [
+              {
+                subtitle: 'The Problem',
+                content: 'Brazilian NF-es are inherently complex and highly inconsistent. Even when legally valid, invoices frequently contain:\n• Ambiguous or incorrect NCM classifications\n• Inconsistent units of measure (e.g., UN, CX, KG, FD)\n• Non-standard product descriptions\n• Divergent quantities that break inventory balance\n\nAs invoice volume grows, these inconsistencies compound, leading to unreliable stock data, manual reconciliation overhead, and increased fiscal risk.'
+              },
+              {
+                subtitle: 'Why This Matters',
+                content: 'For companies operating at scale, these issues result in:\n• Exposure to fiscal audits and penalties\n• Operational inefficiency due to manual corrections\n• Loss of trust in inventory and financial reports\n• Inability to reliably automate downstream processes\n\nThis problem is especially relevant for fintechs, ERPs, accounting platforms, marketplaces, and logistics-heavy operations.'
+              }
+            ]
+          },
+          {
+            title: 'Value Proposition',
+            content: 'Taxofiscal provides a structured approach to fiscal data reliability by enforcing:\n• Deterministic processing where possible\n• AI-assisted inference where ambiguity exists\n• Full traceability of every decision\n• Audit-ready data models\n\nThe system is intentionally conservative: automation is only applied when confidence thresholds are met, otherwise decisions are flagged for review.'
+          },
+          {
+            title: 'Technical Architecture & Engineering',
+            subsections: [
+              {
+                subtitle: 'Design Principles',
+                content: 'The system is built around a few non-negotiable principles:\n• Append-only, immutable data structures\n• Idempotent pipelines for safe reprocessing\n• Clear separation between deterministic logic and AI-assisted inference\n• Explicit modeling of uncertainty and confidence\n\nThese principles are critical in fiscal and compliance-sensitive domains.'
+              },
+              {
+                subtitle: 'High-Level Architecture',
+                content: 'Taxofiscal is implemented as a step-based processing pipeline, where each stage produces auditable outputs that can be safely replayed or recomputed.\n\nThe architecture supports:\n• Incremental processing of new invoices\n• Reconciliation across historical data\n• Versioned decisions and evolving classification logic'
+              },
+              {
+                subtitle: 'Core Components',
+                content: '• NF-e Ingestion Layer — Parses and validates raw XML invoices\n• Canonicalization Engine — Normalizes product identities and units of measure\n• AI-assisted NCM Classification — Suggests conservative fiscal classifications with confidence scoring\n• Append-only Inventory Ledger — Maintains a traceable history of stock movements\n• Reconciliation Engine — Detects and explains inventory inconsistencies\n• Manual Review Workflow — Handles low-confidence or ambiguous cases'
+              },
+              {
+                subtitle: 'Technology Stack',
+                content: '• Backend: Node.js, TypeScript\n• Database: PostgreSQL\n• ORM: Prisma\n• AI Layer: LLM-assisted classification and normalization\n• Infrastructure: VPS, Nginx\n• Execution Model: Local-first MVP, production-oriented design'
+              }
+            ]
+          }
+        ]
+      }
+    }
   ],
 };

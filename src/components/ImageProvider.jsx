@@ -9,6 +9,7 @@ import PrizeIcon from '../assets/icons/prize.png';
 import FomacaoIcon from '../assets/formacao.png';
 import ExperieciaIcon from '../assets/experiencia.png';
 import DestaqueIcon from '../assets/destaque.png';
+import TaxofiscalLogo from '../assets/icons/taxofiscal.svg';
 
 function ImageProvider(imageName) {
   const images = {
@@ -23,6 +24,7 @@ function ImageProvider(imageName) {
     experiencia: ExperieciaIcon,
     destaque: DestaqueIcon,
     dlocal: dlocalLogo,
+    taxofiscal: TaxofiscalLogo,
   };
 
   return images[imageName];

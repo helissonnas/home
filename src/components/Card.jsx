@@ -2,7 +2,8 @@ import ImageProvider from './ImageProvider';
 
 function Card(props) {
   const projectCard = () => (
-    <div className={`text-${props.project.textColor} text-2xl font-semibold flex justify-around items-center h-16`}>
+    <div className={`text-${props.project.textColor} text-2xl font-semibold flex justify-around items-center h-16 gap-4`}>
+      {props.project.logo && <img src={ImageProvider(props.project.logo)} className="w-12 h-12" alt={props.project.name} />}
       {props.project.name}
     </div>
   );
